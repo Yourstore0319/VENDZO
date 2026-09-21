@@ -1,4 +1,4 @@
-/* ================= VENDZO EXTENDED CATEGORY STYLES ================= */
+/* ================= VENDZO COMPLETE STYLES ================= */
 
 :root {
   --vendzo-black: #111111;
@@ -11,7 +11,26 @@
   --transition: all 0.25s ease-in-out;
 }
 
-/* Header & Mobile Toggle */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--vendzo-bg);
+  color: var(--vendzo-black);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header & Navigation */
 .site-header {
   position: sticky;
   top: 0;
@@ -70,7 +89,7 @@
   color: var(--vendzo-gold);
 }
 
-/* Mega Dropdown Menus */
+/* Mega Menus */
 .dropdown-item {
   position: relative;
 }
@@ -101,10 +120,7 @@
   color: var(--vendzo-gold);
   margin-top: 0.75rem;
   margin-bottom: 0.25rem;
-}
-
-.sub-group-title:first-child {
-  margin-top: 0;
+  cursor: pointer;
 }
 
 .type-link {
@@ -113,15 +129,13 @@
   color: var(--vendzo-text-muted);
   text-decoration: none;
   padding: 0.25rem 0;
-  transition: var(--transition);
 }
 
 .type-link:hover {
   color: var(--vendzo-black);
-  padding-left: 4px;
 }
 
-/* Breadcrumb Navigation */
+/* Breadcrumbs */
 .breadcrumb-container {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
@@ -139,30 +153,36 @@
 .breadcrumbs a {
   color: var(--vendzo-black);
   text-decoration: none;
-  font-weight: 500;
 }
 
-.breadcrumbs a:hover {
-  color: var(--vendzo-gold);
+/* Hero Section */
+.hero-banner {
+  padding: 2rem 0;
+  text-align: center;
 }
 
-.breadcrumbs .separator {
-  color: #bbb;
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Category Browser Cards */
+.hero-subtitle {
+  color: var(--vendzo-text-muted);
+}
+
+/* Category Grid */
 .category-browser-section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 .category-card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid var(--vendzo-border);
   border-radius: var(--vendzo-radius);
-  padding: 1.25rem;
+  padding: 1.5rem;
   text-align: center;
   cursor: pointer;
   transition: var(--transition);
@@ -170,49 +190,86 @@
 
 .category-card:hover {
   border-color: var(--vendzo-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
 }
 
-.category-card h3 {
-  font-size: 1rem;
-  margin: 0;
-  color: var(--vendzo-black);
-}
-
-/* Type Pills Bar */
-.type-filter-bar {
+/* Product Grid & Cards */
+.section-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
 }
 
-.pills-wrapper {
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid var(--vendzo-border);
+  border-radius: var(--vendzo-radius);
+  padding: 1rem;
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
-.pill-btn {
-  background: #efefef;
-  border: none;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
+.product-image-wrap img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: var(--vendzo-radius);
+}
+
+.product-brand {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--vendzo-gold);
+  font-weight: 700;
+}
+
+.product-name {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.product-desc {
   font-size: 0.85rem;
-  cursor: pointer;
-  white-space: nowrap;
+  color: var(--vendzo-text-muted);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.affiliate-btn {
+  display: inline-block;
+  background: var(--vendzo-black);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
   transition: var(--transition);
 }
 
-.pill-btn.active, .pill-btn:hover {
-  background: var(--vendzo-black);
-  color: #fff;
+.affiliate-btn:hover {
+  background: var(--vendzo-gold);
 }
 
-/* Responsive Styles for Touch & Mobile Devices */
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--vendzo-border);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--vendzo-text-muted);
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block;
@@ -227,7 +284,6 @@
     background: #ffffff;
     border-bottom: 1px solid var(--vendzo-border);
     padding: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
 
   .main-nav.open {
@@ -244,10 +300,6 @@
     box-shadow: none;
     border: none;
     padding-left: 1rem;
-  }
-
-  .dropdown-item:hover .mega-menu {
-    display: none; /* Mobile handles click toggling via class */
   }
 
   .dropdown-item.mobile-open .mega-menu {
